@@ -11,8 +11,10 @@ A simple log handler for [apex/log](https://github.com/apex/log) that formats ti
 
 ## Installation
 
-```bash
-go get github.com/zacsketches/cstlog
+The tricky part is that `tzdata` necessary to find the `America/Chicago` zone is not in most minimal production containers. So you will need to add this line to your Dockerfile for Alpine builds.
+
+```docker
+RUN apk add --no-cache tzdata
 ```
 
 ## Usage
