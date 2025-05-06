@@ -1,4 +1,43 @@
 # cstlog
-Minimal logging package that wraps [github.com/apex/log](github.com/apex/log) for logging in U.S. central time.
 
-I have a few private projects that I monitor and I find myself frequently trying to convert UTC into my local time instead of concentrating on what I'm seeing in the logs. So, I decided to make life easier and just start loggin in my own timezone.
+A simple log handler for [apex/log](https://github.com/apex/log) that formats timestamps in **Central Standard Time (CST/CDT)** for human-readable CLI output.
+
+## Features
+
+- Replaces the default `cli` handler from `apex/log`
+- Prints log timestamps in `America/Chicago` time zone
+- Automatically shows `CST` or `CDT` depending on daylight saving time
+- Small, dependency-free (except `apex/log`)
+
+## Installation
+
+```bash
+go get github.com/zacskethes/cstlog
+```
+
+## Usage
+```go
+package main
+
+import (
+    "os"
+    "github.com/apex/log"
+    "github.com/yourusername/cstlog"
+)
+
+func init() {
+    log.SetHandler(cstlog.New(os.Stdout))
+}
+
+func main() {
+    log.Info("server started")
+}
+```
+
+## Example Output
+
+`2025-05-05 13:30:02 CDT INFO server started`
+
+## License
+
+MIT © zacsketches 2025
