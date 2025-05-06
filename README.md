@@ -12,7 +12,7 @@ A simple log handler for [apex/log](https://github.com/apex/log) that formats ti
 ## Installation
 
 ```bash
-go get github.com/zacskethes/cstlog
+go get github.com/zacsketches/cstlog
 ```
 
 ## Usage
