@@ -22,7 +22,7 @@ package main
 import (
     "os"
     "github.com/apex/log"
-    "github.com/yourusername/cstlog"
+    "github.com/zacsketches/cstlog"
 )
 
 func init() {
